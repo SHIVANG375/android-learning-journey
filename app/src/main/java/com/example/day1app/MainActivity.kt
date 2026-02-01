@@ -17,27 +17,29 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.btnClick)
 
         button.setOnClickListener {
+            Log.e("USER_ACTION","Button clicked with him")
             val name=input.text.toString()
             val intent = Intent(this,SecondActivity::class.java)
             intent.putExtra("USERNAME",name)
             startActivity(intent)
         }
     }
-    override fun onStart() {
+
+    override fun onStart(){
         super.onStart()
-        Log.d("Lifecycle", "onStart")
+        Log.d("FirstActivity","ON START CALLED")
     }
     override fun onResume(){
         super.onResume()
-        Log.d("LifeCycle","onResume")
+        Log.d("FirstActivity","ON RESUME CALLED")
     }
-    override fun onPause() {
+    override fun onPause(){
         super.onPause()
-        Log.d("LifeCycle", "onPause")
+        Log.d("FirstActivity","ON PAUSE CALLED")
     }
     override fun onStop(){
         super.onStop()
-        Log.d("LifeCycle","onStop")
+        Log.d("FirstActivity","ON STOP CALLED")
     }
 
 }
